@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <comment>
+
+    This is a Power Menu config file for example
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+    Is a simple tree config structure of menu elements. One menu element must
+    have a Caption property ("-" for a splitter) and can have some propertyes:
+    
+    Command       -   Shell command string, exec when this menu item is selected.
+                      And we can split few command string by "\n" symbols.
+    CommandCtrl   -   Like a Command, but it works when Command button is pressed.
+    CommandShift  -   Like a Command, but it works when Shift button is pressed.
+    ExecHide      -   If this property is True command will exec in hide mode.
+    
+    This example config for my smarthome based on Xiaomi. I use Power Menu to
+    control lights (see rytilahti/python-miio), start videorecorder panel or
+    start broadcast audio from desktop to MiHub. All IP and tokens are random.
+    
+    Wyfinger 2019, github.com/wyfinger
+ 
+  </comment>
+
+  <menu Caption="Audio to MiHub" Command="D:/Program Files/ffmpeg/start_radio.bat" />
+  <menu Caption="-"/>
+  <menu Caption="Video NVR" Command="iexplore 192.168.1.100" />
+  <menu Caption="-"/>
+  <menu Caption="All lights">
+    <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 on  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada on  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 on  \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d on \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc on \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e on" />
+    <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 off \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada off \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 off \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d off \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc off \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e off" />
+    <menu Caption="-" />
+    <menu Caption="Bright scene" ExecHide="True"  Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 1  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 1  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 1  \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 1 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 1 \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 1" />
+    <menu Caption="Warm scene" ExecHide="True"  Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 2  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 2  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 2  \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 2 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 2 \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 2" />
+    <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 3  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 3  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 3  \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 3 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 3 \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 3" />
+    <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 4  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 4  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 4  \n miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 4 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 4 \n miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 4" />
+  </menu>
+  <menu Caption="-" />
+  <menu Caption="Living room" >
+    <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 on  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada on  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 on" />
+    <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 off \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada off \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 off" />
+    <menu Caption="-" />
+    <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 1  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 1  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 1" />
+    <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 2  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 2  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 2" />
+    <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 3  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 3  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 3" />
+    <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 4  \n miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 4  \n miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 4" />
+    <menu Caption="-" />
+    <menu Caption="Living room 1">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 off" />
+      <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.71 --token 56719843ee91eb019436352d8c52f213 set-scene 4" />
+    </menu>
+    <menu Caption="Living room 2">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada off" />
+      <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.81 --token fa35ef0a11483a4a0e52b1b14453cada set-scene 4" />
+    </menu>
+    <menu Caption="Living room 3">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 off" />
+      <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.126 --token 9bbe7ad388393d4e8d27d104bc6ee889 set-scene 4" />
+    </menu>
+  </menu>
+  <menu Caption="Bedroom">
+    <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d on \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc on" />
+    <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d off \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc off" />
+    <menu Caption="-" />
+    <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 1 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 1" />
+    <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 2 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 2" />
+    <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 3 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 3" />
+    <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 4 \n miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 4" />
+    <menu Caption="-" />
+    <menu Caption="Bedroom 1">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d off" />
+      <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.47 --token 6820342516cd602dc3b616780750d11d set-scene 4" />
+      </menu>
+    <menu Caption="Bedroom 2">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc off" />
+      <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.207 --token 24fadb2c30a4ffaeb21820f796a246cc set-scene 4" />
+    </menu>
+  </menu>
+  <menu Caption="Hallway">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e off" />
+    <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 2" />
+      <menu Caption="TV scene" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 3" />
+      <menu Caption="Night light" ExecHide="True" Command="miceil --ip 192.168.1.127 --token 73e21b8f64356917651898a498d2f05e set-scene 4" />
+  </menu>
+  <menu Caption="Bathroom">
+      <menu Caption="Turn on" ExecHide="True" Command="miceil --ip 192.168.1.228 --token 228348d2c03c8ebcb792b627f726ef8c on \n miceil --ip 192.168.1.110 --token 795ff48cdcd098376583aa0dbddeaf45 on \n miceil --ip 192.168.1.26 --token 588c82f5d9374dde66f7a1b33eac7335 on \n miceil --ip 192.168.1.164 --token 827c0e9034d55ca3611383c1d1a061ae on" />
+      <menu Caption="Turn off" ExecHide="True" Command="miceil --ip 192.168.1.228 --token 228348d2c03c8ebcb792b627f726ef8c off \n miceil --ip 192.168.1.110 --token 795ff48cdcd098376583aa0dbddeaf45 off \n miceil --ip 192.168.1.26 --token 588c82f5d9374dde66f7a1b33eac7335 off \n miceil --ip 192.168.1.164 --token 827c0e9034d55ca3611383c1d1a061ae off" />
+    <menu Caption="-" />
+      <menu Caption="Bright scene" ExecHide="True" Command="miceil --ip 192.168.1.228 --token 228348d2c03c8ebcb792b627f726ef8c set-scene 1 \n miceil --ip 192.168.1.110 --token 795ff48cdcd098376583aa0dbddeaf45 set-scene 1 \n miceil --ip 192.168.1.26 --token 588c82f5d9374dde66f7a1b33eac7335 set-scene 1 \n miceil --ip 192.168.1.164 --token 827c0e9034d55ca3611383c1d1a061ae set-scene 1" />
+      <menu Caption="Warm scene" ExecHide="True" Command="miceil --ip 192.168.1.228 --token 228348d2c03c8ebcb792b627f726ef8c set-scene 2 \n miceil --ip 192.168.1.110 --token 795ff48cdcd098376583aa0dbddeaf45 set-scene 2 \n miceil --ip 192.168.1.26 --token 588c82f5d9374dde66f7a1b33eac7335 set-scene 2 \n miceil --ip 192.168.1.164 --token 827c0e9034d55ca3611383c1d1a061ae set-scene 2" />
+  </menu>
+</menu>
